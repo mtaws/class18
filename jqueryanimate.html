@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery triggered with Animation</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!--relative path to animate.css. Lives on your server among your files-->
+	<link rel="stylesheet" href="animate.css">
+	<!--absolute path to animate css. Need to make sure link is active and working-->
+	<link rel="stylesheet" href="http://raw.githubusercontent.com/daneden/animate.css/master/animate.min.css">
+</head>
+<body>
+<h1 class="animated">Animate Me!</h1>
+
+<button class="click">Click Me</button>
+<button class="removeRed">Remove Red</button>
+
+<style>
+
+	body {
+		text-align: center;
+	}
+
+  h1 {
+    font-size: 100px;
+    text-align: center;
+    color:#3498db;
+    font-family: sans-serif;
+  }
+
+	button.click {
+		font-size: 21px;
+		cursor: pointer;
+		padding: 20px 25px;
+		color: #fff;
+		border: #27ae60 1px solid;
+		background: #2ecc71;
+	}
+
+	button.removeRed {
+		font-size: 21px;
+		cursor: pointer;
+		padding: 20px 25px;
+		color: #fff;
+		border: #27ae60 1px solid;
+		background: tomato;
+	}
+
+
+	h1.bigRed {
+		color:red;
+		font-size: 200px;
+	}
+
+</style>
+
+<script>
+	$(function() {
+
+		// Save the h1 element in a selector // var stands for variable 
+		var $text = $('h1');
+
+		$('button.removeRed').on('click', function() {
+
+			//Remove class of .bigRed from text 
+			$text.removeClass('bigRed');
+
+		});
+
+		$('button.click').on('click', function() {
+
+			// Change the class name of the animation you want to use here.
+			$text.addClass('swing');
+
+			//Add class of .bigRed to text 
+			$text.addClass('bigRed');
+
+			// Code to listen for the end of the animation.
+			$text.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+				
+				// Change the class name of the animation you want to use here.
+				$text.removeClass('swing');
+			});
+		});
+	});
+</script>
+
+
+	
+</body>
+</html>

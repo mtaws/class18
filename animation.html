@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!--Exercise 
+  1. Add another shooting star
+  2. Make it appear from the opposite corner
+  3. Make the second shooting star a scale in size by 1.5 and change colour. -->
+
+  <meta charset="UTF-8">
+  <title>Animations</title>
+</head>
+<body>
+  <span class="shootingStar">&#9732;</span>
+  <span class="shootingStar shootingStarTwo">&#9732;</span>
+
+  <style>
+    body {
+      background:black;
+    }
+
+    .shootingStar {
+      /* Set up the normal state */
+      color:yellow;
+      font-size:50px;
+      font-weight: bold;
+      position: absolute;
+      -webkit-transform:rotate(192deg);
+      /* apply the animation */
+      -webkit-animation:shoot 3s linear infinite;
+    }
+
+    .shootingStarTwo {
+      animation:fly 3s linear infinite, rotate(192deg),scale(1.5);  
+    }
+
+   @-webkit-keyframes shoot {
+      0% {
+        top:100%;
+        left:0;
+      }
+      100% {
+        top:0;
+        left:100%;
+      }
+
+   @-webkit-keyframes fly {
+      0% {
+        top:100%;
+        right:0;
+      }
+      100% {
+        top:0;
+        right:100%;
+      }
+    }
+  }
+  </style>
+</body>
+</html>

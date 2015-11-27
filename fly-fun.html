@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fly Fun</title>
+	<style>
+		.owl {
+			height:307px;
+			width:210px;
+			background-image: url(http://f.cl.ly/items/1k0J3u2Y2t2W171T2z0A/fly_owl.png);
+			position: absolute;
+			animation: flap 2s steps(17) infinite, 
+								  fly 3s infinite;
+		}
+
+		@keyframes flap {
+			0% {
+				background-position: 0;
+			}
+			100% {
+				background-position: -3570px;
+			}
+		}
+
+		@keyframes fly {
+			0%{
+				left:0;
+			}
+			100% {
+				left:100%;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="owl"></div>
+	
+</body>
+</html>

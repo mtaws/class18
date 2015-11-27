@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animation Fun</title>
+	<link rel="stylesheet" href="animate.css" class="src">
+	<style>
+		body {
+			background-color: cadetblue;
+		}
+		.snowflake {
+			color:white;
+			position:absolute;
+			animation: snow 4s linear infinite;
+		}
+
+		.myBox {
+			background-color: tomato;
+			width:200px;
+			height:200px;
+
+		}
+		
+		@keyframes snow {
+			0% {
+        top :0;
+    	}
+			10%, 50%, 90% {
+				margin-left: 100px;
+				color: tomato;
+			}
+			50%, 40%, 60%, 80% {
+				margin-left: 0px;
+				color:purple;
+			}
+    	100% {
+        top:100%;
+    	}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="snowflake snowflake1">&#10052;</div>
+	<div class="myBox animated swing infinite"></div>
+	
+</body>
+</html>
